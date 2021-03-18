@@ -1,37 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="main.js"></script>
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
-<body>
-    <div id="main-border" style="border: 1px solid black; height: 300px; width: 300px; background-color: black;">
-        <img id="tank-img" style="position: relative; top: 0px; left: 0px;"width="30" height="30" src="/images/tank.png" alt="tank">
+
+<body onkeydown="moveTank(event)">
+    <div id="main-border"
+        style="position: relative; border: 1px solid black; height: 300px; width: 300px; background-color: #fff;">
+        <img id="tank-img" style="position: absolute; top: 0px; left: 0px;" width="30" height="30"
+            src="./images/tank.png" alt="tank">
     </div>
-    <table>
+    HP:<div id="hp" style="background-color: green">20</div>
+    <button onclick="Hit()">Hit</button>
+    <table width="200px" height="200px">
         <tr>
-          <td></td>
-          <td>
-            <button  onclick="moveUp()">⬆</button>
-          </td>
-          <td></td>
+            <td></td>
+            <td>
+                <input type="button" value="⬆" onclick="moveUp()">
+            </td>
+            <td></td>
         </tr>
         <tr>
-          <td>
-            <button  onclick="moveLeft()">⬅</button></td>
-          <td></td>
-          <td>
-            <button  onclick="moveRight()">➡</button></td>
+            <td>
+                <input type="button" value="⬅" onclick="moveLeft()">
+            </td>
+            <td></td>
+            <td>
+                <input type="button" value="➡" onclick="moveRight()">
+            </td>
         </tr>
         <tr>
-          <td></td>
-          <td>
-            <button  onclick="moveDown()">⬇</button></td>
-          <td></td>
+            <td></td>
+            <td>
+                <input type="button" value="⬇" onclick="moveDown()">
+            </td>
+            <td></td>
         </tr>
-      </table>
+    </table>
+    <script src="main.js"></script>
 </body>
+
 </html>
