@@ -14,30 +14,37 @@
         style="position: relative; border: 1px solid black; height: 300px; width: 300px; background-color: #fff;">
         <img id="tank-img" style="position: absolute; top: 0px; left: 0px;" width="30" height="30"
             src="./images/tank.png" alt="tank">
+            <span id="span0">GAME OVER</span>
     </div>
-    <span style="float: left">HP:</span><div style="display: block ; background-color: green" width="20px" height="20px" id="hp" >20</div>
-    <button style="float: left" onclick="getHit()">Hit</button>
-    <table width="200px" height="200px">
+    <div id="div2">
+        <span id="span1">HP:</span><div style="display: block ; background-color: green" width="20px" height="20px" id="hp" >20</div>
+        <button class="hit" onclick="getHit()">HIT</button>
+    </div>
+    <table >
         <tr>
             <td></td>
             <td>
-                <input type="button" value="⬆" onclick="moveUp()">
+                <!-- <input class="ip" type="button" value="⬆" onclick="moveUp()"> -->
+                <button class="bt" onclick="moveUp()">⬆</button>
             </td>
             <td></td>
         </tr>
         <tr>
             <td>
-                <input type="button" value="⬅" onclick="moveLeft()">
+                <!-- <input class="bt" type="button" value="⬅" onclick="moveLeft()"> -->
+                <button class="bt" onclick="moveLeft()">⬅</button>
             </td>
             <td></td>
             <td>
-                <input type="button" value="➡" onclick="moveRight()">
+                <!-- <input class="bt" type="button" value="➡" onclick="moveRight()"> -->
+                <button class="bt" onclick="moveRight()">➡</button>
             </td>
         </tr>
         <tr>
             <td></td>
             <td>
-                <input type="button" value="⬇" onclick="moveDown()">
+                <!-- <input class="bt" type="button" value="⬇" onclick="moveDown()"> -->
+                <button class="bt" onclick="moveDown()">⬇</button>
             </td>
             <td></td>
         </tr>

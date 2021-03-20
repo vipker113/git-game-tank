@@ -3,3 +3,36 @@
     margin: 0px;
     box-sizing: border-box;
 }   
+#hp {
+    width: 20px;
+    height: 20px;
+    margin-left: 40px;
+    text-align: center;
+}
+
+.hit{
+    padding: 10px; 
+    margin-left: 130px;
+}
+.bt {
+    padding: 20px;
+    font-size: inherit ;
+    margin-left: 30px;
+}
+#main-border {
+    margin-left: 10px;
+    margin-top: 10px;
+}
+#span1 {
+    float: left;
+    margin-left: 10px;
+}
+#span0 {
+    font-size: xx-large;
+    color: red;
+    background-color: black;
+    margin: auto;
+    position: absolute;
+    left: 55px;
+    top: 120px;
+}
