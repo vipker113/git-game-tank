@@ -1,6 +1,7 @@
 let hp = 20;
 document.getElementById("span0").style.display= "none";
 document.getElementById("keyboard").style.display= "none";
+document.getElementById("reload").style.display= "none";
 
 function moveTank(e) {
     console.log(e.code);
@@ -60,6 +61,7 @@ function getHit() {
     } else if (hp  < 1) {
         document.getElementById("span0").style.display= "block";
         explosion();
+        document.getElementById("reload").style.display= "block";
     } 
 }
 function moveDown() {
@@ -130,4 +132,9 @@ function openKB() {
         document.getElementById("virtualKB").innerText="Bật Bàn Phím Ảo"
     }
 
+}
+function reload() {
+    if( hp < 1) {
+        location.reload()
+    }
 }

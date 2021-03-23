@@ -31,9 +31,17 @@
     font-size: xx-large;
     color: red;
     background-color: black;
-    margin: auto;
+    text-align: center;
+    padding: 4px;
     position: absolute;
     left: 55px;
     top: 120px;
+}
+#reload {
+    padding: 4px;
+    position: absolute;
+    text-align: center;
+    left: 120px;
+    top: 180px;
 }
 
