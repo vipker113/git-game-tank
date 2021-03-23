@@ -10,9 +10,9 @@
     text-align: center;
 }
 
-.hit{
+#hit, #virtualKB{
     padding: 10px; 
-    margin-left: 130px;
+    margin-left: 20px;
 }
 .bt {
     padding: 20px;
@@ -36,3 +36,4 @@
     left: 55px;
     top: 120px;
 }
+

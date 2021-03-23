@@ -1,13 +1,15 @@
 let hp = 20;
 document.getElementById("span0").style.display= "none";
+document.getElementById("keyboard").style.display= "none";
+
 function moveTank(e) {
     console.log(e.code);
     let keyCode = e.keyCode
     switch (keyCode) {
-        case 38:  moveUp() ; break;
-        case 40:  moveDown() ; break;
-        case 37:  moveLeft() ; break;
-        case 39:  moveRight() ; break;
+        case 38:  moveUp() ; checkExplosion() ; break; 
+        case 40:  moveDown() ; checkExplosion() ; break;
+        case 37:  moveLeft() ; checkExplosion() ; break;
+        case 39:  moveRight()  ; checkExplosion() ; break;
     }
     // if (keyCode == 38) {
     //     moveUp()
@@ -22,7 +24,23 @@ function moveTank(e) {
     //     moveRight()
     // }
 }
+function hitPoints() {
+    let heath=document.getElementById("cayHp").style["width"]
+    heath= parseInt(heath)
+    heath-=10;
+    document.getElementById("cayHp").style.width= `${heath}px` ;
+    if (heath < 200 && heath > 150) {
+        document.getElementById("cayHp").style["backgroundColor"] = "#adff2f"
+    }  else if (heath < 151 && heath > 100) {
+        document.getElementById("cayHp").style["backgroundColor"] = "yellow"
+    } else if (heath < 101 && heath > 50) {
+        document.getElementById("cayHp").style["backgroundColor"] = "orange"
+    } else if (heath < 51 && heath >=0 ) {
+        document.getElementById("cayHp").style["backgroundColor"] = "red"
+    }
+}
 function getHit() {
+
     if (hp > 0) {
         hp-=1;
     }
@@ -41,6 +59,7 @@ function getHit() {
         document.getElementById("span0").style.display= "none";
     } else if (hp  < 1) {
         document.getElementById("span0").style.display= "block";
+        explosion();
     } 
 }
 function moveDown() {
@@ -79,4 +98,33 @@ function moveRight() {
     document.getElementById("tank-img").style["left"] = `${left}px`;
     document.getElementById("tank-img").style["transform"] = "rotate(90deg)"
     }
+}
+function explosion(){
+    document.getElementById("tank-img").src="./images/explosion.png"
+}
+
+function checkExplosion(){
+    let x= document.getElementById("tank-img").style["left"]
+    x= parseInt(x)
+    let y= document.getElementById("tank-img").style["top"]
+    y= parseInt(y)
+    let x2= document.getElementById("boom-img").style["left"]
+    x2= parseInt(x2)
+    let y2= document.getElementById("boom-img").style["top"]
+    y2= parseInt(y2)
+    if (x == x2 && y == y2) {
+        hitPoints();
+        getHit();
+        // document.getElementById("span0").style.display= "block";
+    } 
+}
+function openKB() {
+    if (document.getElementById("keyboard").style.display == "none") {
+        document.getElementById("keyboard").style.display= "block";
+        document.getElementById("virtualKB").innerText="Tắt Bàn Phím Ảo"
+    } else if (document.getElementById("keyboard").style.display != "none") {
+        document.getElementById("keyboard").style.display == "none";
+        document.getElementById("virtualKB").innerText="Bật Bàn Phím Ảo"
+    }
+
 }

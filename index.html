@@ -12,15 +12,20 @@
 <body onkeydown="moveTank(event)">
     <div id="main-border"
         style="position: relative; border: 1px solid black; height: 300px; width: 300px; background-color: #fff;">
-        <img id="tank-img" style="position: absolute; top: 0px; left: 0px;" width="30" height="30"
-            src="./images/tank.png" alt="tank">
-            <span id="span0">GAME OVER</span>
+        <img id="tank-img" style="position: absolute; top: 0px; left: 0px;" width="30" height="30" src="./images/tank.png" alt="tank">
+        <img id="boom-img" style="position: absolute; top: 270px; left: 120px;" width="30" height="30" src="./images/boom.png" alt="boom">
+        <span id="span0">GAME OVER</span>
     </div>
     <div id="div2">
         <span id="span1">HP:</span><div style="display: block ; background-color: green" width="20px" height="20px" id="hp" >20</div>
-        <button class="hit" onclick="getHit()">HIT</button>
+        <div id="thanhHp" style="margin-left: 10px; border: 1px solid; width: 202px; height: 16px;">
+            <div id="cayHp" style="background-color: green; width: 200px; height: 14px;"></div>
+        </div>
+        <br>
+        <button id="hit" onclick="getHit()">HIT</button>
+        <button id="virtualKB" onclick="openKB()">Bật Bàn Phím Ảo</button>
     </div>
-    <table >
+    <table id="keyboard">
         <tr>
             <td></td>
             <td>
