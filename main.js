@@ -123,7 +123,7 @@ function openKB() {
         document.getElementById("keyboard").style.display= "block";
         document.getElementById("virtualKB").innerText="Tắt Bàn Phím Ảo"
     } else if (document.getElementById("keyboard").style.display != "none") {
-        document.getElementById("keyboard").style.display == "none";
+        document.getElementById("keyboard").style.display = "none";
         document.getElementById("virtualKB").innerText="Bật Bàn Phím Ảo"
     }
 
