@@ -125,9 +125,7 @@ function checkExplosion(){
         getHit();
         hitPoints();
         randomBoom();
-        if (document.getElementById("boom-img").style["left"]==document.getElementById("tank-img").style["left"] && document.getElementById("boom-img").style["top"]==document.getElementById("tank-img").style["top"]) {
-            randomBoom();
-        }
+        checkDuplicate();
         // document.getElementById("span0").style.display= "block";
     } 
 }
@@ -149,4 +147,9 @@ function reload() {
 function randomBoom() {
     document.getElementById("boom-img").style["left"]=(30*Math.floor((Math.random() * 9)+1) +"px")
     document.getElementById("boom-img").style["top"]=(30*Math.floor((Math.random() * 9)+1) +"px")
+}
+function checkDuplicate() {
+    if (document.getElementById("boom-img").style["left"]==document.getElementById("tank-img").style["left"] && document.getElementById("boom-img").style["top"]==document.getElementById("tank-img").style["top"]) {
+        randomBoom();
+    }
 }
