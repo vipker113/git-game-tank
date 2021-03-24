@@ -2,7 +2,10 @@ let hp = 20;
 document.getElementById("span0").style.display= "none";
 document.getElementById("keyboard").style.display= "none";
 document.getElementById("reload").style.display= "none";
-
+document.getElementById("boom-img").style["left"]=30*Math.floor((Math.random() * 9)+1)+"px"
+document.getElementById("boom-img").style["top"]=30*Math.floor((Math.random() * 9)+1) +"px"
+let x2=document.getElementById("boom-img").style["left"]
+let y2=document.getElementById("boom-img").style["top"]
 function moveTank(e) {
     console.log(e.code);
     let keyCode = e.keyCode
@@ -41,7 +44,6 @@ function hitPoints() {
     }
 }
 function getHit() {
-
     if (hp > 0) {
         hp-=1;
     }
@@ -63,6 +65,7 @@ function getHit() {
         explosion();
         document.getElementById("reload").style.display= "block";
     } 
+    hitPoints();
 }
 function moveDown() {
     let top = document.getElementById("tank-img").style["top"];
@@ -113,13 +116,18 @@ function checkExplosion(){
     x= parseInt(x)
     let y= document.getElementById("tank-img").style["top"]
     y= parseInt(y)
-    let x2= document.getElementById("boom-img").style["left"]
+    x2= document.getElementById("boom-img").style["left"]
     x2= parseInt(x2)
-    let y2= document.getElementById("boom-img").style["top"]
+    y2= document.getElementById("boom-img").style["top"]
     y2= parseInt(y2)
     if (x == x2 && y == y2) {
         hitPoints();
         getHit();
+        hitPoints();
+        randomBoom();
+        if (document.getElementById("boom-img").style["left"]==document.getElementById("tank-img").style["left"] && document.getElementById("boom-img").style["top"]==document.getElementById("tank-img").style["top"]) {
+            randomBoom();
+        }
         // document.getElementById("span0").style.display= "block";
     } 
 }
@@ -137,4 +145,8 @@ function reload() {
     if( hp < 1) {
         location.reload()
     }
+}
+function randomBoom() {
+    document.getElementById("boom-img").style["left"]=(30*Math.floor((Math.random() * 9)+1) +"px")
+    document.getElementById("boom-img").style["top"]=(30*Math.floor((Math.random() * 9)+1) +"px")
 }
